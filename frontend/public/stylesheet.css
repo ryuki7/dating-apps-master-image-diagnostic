@@ -1,0 +1,115 @@
+@import 'https://fonts.googleapis.com/css?family=Cinzel';
+
+body {
+    margin: 0px;
+    text-align: center;
+}
+
+p {
+    margin: 150px 0 200px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,.4);
+}
+
+.button {
+    color: white;
+    background: linear-gradient(#c2f2f8, #f5dbf1);
+    padding: 0 25px;
+    font-size: 25px;
+    border-radius: 60px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    user-select: none;
+    vertical-align: middle;
+    z-index: 1;
+    transition: .3s ease-out;
+    height: 80px;
+    line-height: 80px;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: .5px;
+    outline: 0;
+    border: none;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: 0 0 3px rgba(0,0,0,.5);
+}
+
+/*背景画像の設定をする*/
+.bgImage {
+    height: 100%;
+    background: url('./pexels-karolina-grabowska-4197563.jpg') no-repeat center;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;/*ブラー効果でボヤけた部分を非表示*/
+  }
+
+/*:beforeにぼかし効果を設定する*/
+.bgImage:before {
+    content: '';
+    background: inherit;/*.bgImageで設定した背景画像を継承する*/
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    position: absolute;
+    /*ブラー効果で画像の端がボヤけた分だけ位置を調整*/
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;/*重なり順序を一番下にしておく*/
+}
+
+.title .sub {
+  color: aquamarine;
+  margin-top: 70px;
+  margin-bottom: 0;
+  font-size: 35px;
+}
+
+.title .main {
+  color: rgb(164, 255, 247);
+  margin: 0 0;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 23px;
+  margin: 30px 0;
+}
+
+.button.top {
+  font-size: 30px;
+}
+
+/* @media screen and (min-width: 375px) and ( max-width: 385px) {
+    #toggle-radius-button {
+       
+    }
+ }
+
+ @media screen and (min-width: 386px) and ( max-width: 400px) {
+    #toggle-radius-button {
+       
+    }
+ }
+
+ @media screen and (min-width: 401px) and ( max-width: 425px) {
+     #toggle-radius-button {
+        
+    }
+ }
+
+ @media screen and (min-width: 426px) and ( max-width: 440px) {
+    #toggle-radius-button {
+       
+   }
+} */
