@@ -3,15 +3,11 @@
 body {
     margin: 0px;
     text-align: center;
+    font-family: 'Cinzel', serif;
 }
 
-p {
-    margin: 150px 0 200px;
-    text-align: center;
-    font-family: 'Cinzel', serif;
-    font-size: 30px;
-    color: white;
-    text-shadow: 0 0 10px rgba(0,0,0,.4);
+.hidden {
+  display: none !important;
 }
 
 .button {
@@ -67,6 +63,11 @@ p {
     z-index: -1;/*重なり順序を一番下にしておく*/
 }
 
+.title {
+  text-shadow: 0 0 10px rgba(0,0,0,.4);
+  font-size: 30px;
+}
+
 .title .sub {
   color: aquamarine;
   margin-top: 70px;
@@ -84,11 +85,204 @@ p {
 .description {
   font-size: 23px;
   margin: 30px 0;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,.4);
 }
 
 .button.top {
-  font-size: 30px;
+  font-size: 35px;
 }
+
+.diagnostic {
+  text-align: center;
+}
+
+.each_title {
+  font-size: 40px;
+  margin: 70px 40px 30px 40px;
+}
+
+.gradation {
+	color: #fff; /* 文字色 */
+	padding: 5px 9px; /* 上下・左右の余白 */
+	position: relative;
+	text-shadow: -1px -1px 1px rgb(135, 181, 224), 1px -1px 1px rgb(135, 181, 224), -1px 1px 1px rgb(135, 181, 224), 1px 1px 1px rgb(135, 181, 224); /* 文字の縁取り */
+	z-index: 0;
+}
+
+.gradation:before {
+	background: repeating-linear-gradient(45deg, rgb(218, 237, 255), rgb(218, 237, 255) 4px, rgb(242, 249, 255) 0, rgb(242, 249, 255) 7px); /* 斜めボーダー */
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -2;
+}
+
+.gradation:after {
+	background: linear-gradient(180deg, rgb(255, 246, 255), rgba(255,255,255,.1)); /* 白いグラデーション */
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;	
+}
+
+.select_item {
+  
+}
+
+.two_vertical_line {
+  font-size: 22px;
+	padding: 5px 5px 5px 30px; /* 上・右・下・左の余白 */
+	position: relative;
+  width: 140px;
+  padding-left: 45px;
+  margin-bottom: 0px;
+}
+
+.two_vertical_line.hot_pink {
+  color: #dd6aa9; /* 文字色 */
+}
+
+.two_vertical_line.yellow_green {
+  color: #6add70; /* 文字色 */
+}
+
+.two_vertical_line:before {
+	border-radius: 5px;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 3px; /* 左端からの位置 */
+	width: 5px; /* 左側の線の幅 */
+	height: 100%;
+  margin-left: 32px;
+}
+
+.two_vertical_line.hot_pink:before {
+  background-color: #ef85c3; /* 左側の線の色 */
+}
+
+.two_vertical_line.yellow_green:before {
+  background-color: #85ef8a; /* 左側の線の色 */
+}
+
+.two_vertical_line:after {
+	border-radius: 5px;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 12px; /* 左端からの位置 */
+	width: 5px; /* 右側の線の幅 */
+	height: 100%;
+  margin-left: 32px;
+}
+
+.two_vertical_line.hot_pink:after {
+	background-color: rgb(255, 199, 227); /* 右側の線の色 */
+}
+
+.two_vertical_line.yellow_green:after {
+	background-color: rgb(158, 255, 155); /* 右側の線の色 */
+}
+
+.cp_ipradio {
+	width: 90%;
+	margin: 20px 2em 0 2em;
+	text-align: center;
+}
+.cp_ipradio input[type='radio'] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+.cp_ipradio label {
+	position: relative;
+  text-align: left;
+	display: block;
+  margin-bottom: 40px;
+	margin-right: 30px;
+	padding-right: 10px;
+	padding-left: 35px;
+	cursor: pointer;
+}
+.cp_ipradio label::before {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 24px;
+	height: 24px;
+	content: ' ';
+	border-radius: 4px;
+}
+.cp_ipradio.hot_pink label::before {
+	border: 2px solid rgb(255, 199, 227);
+}
+.cp_ipradio.yellow_green label::before {
+	border: 2px solid rgb(158, 255, 155);
+}
+.cp_ipradio input[type='radio'] + label::before {
+	border-radius: 18px;
+}
+.cp_ipradio input[type='radio']:checked + label {
+	padding-left: 10px;
+	color: #ffffff;
+  text-align: center;
+}
+.cp_ipradio input[type='radio']:checked + label::before {
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.cp_ipradio.hot_pink input[type='radio']:checked + label::before {
+	background: rgb(255, 199, 227);
+}
+.cp_ipradio.yellow_green input[type='radio']:checked + label::before {
+	background: rgb(158, 255, 155);
+}
+/* Transition */
+.cp_ipradio label, .cp_ipradio label::before {
+	-webkit-transition: 0.25s all ease;
+	        transition: 0.25s all ease;
+}
+
+.image_form {
+  text-align: center;
+}
+
+.image_form label {
+  width: 110px;
+  font-size: 17px;
+  color:#FFFFFF;
+  margin: 0 auto;
+  display: block;
+  padding: 7px 0;
+  background:#b6deff;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  text-shadow: 0 0 3px rgba(0,0,0,.5);
+}
+
+.image_form input {
+  display: none;
+  /* display: block;
+  margin: 0 auto; */
+}
+
+#diagnostic_submit_button {
+  font-size: 30px;
+  height: 60px;
+  line-height: 60px;
+  margin-bottom: 35px;
+}
+
 
 /* @media screen and (min-width: 375px) and ( max-width: 385px) {
     #toggle-radius-button {
