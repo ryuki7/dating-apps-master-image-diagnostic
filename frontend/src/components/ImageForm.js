@@ -9,12 +9,12 @@ function ImageForm(props) {
   const [image, setImage] = useState();
 
   // 画像ファイルをリサイズする。(画像ファイルを返す。)
-  const resizeFile = (image_file) =>
+  const resizeFile = (image_file, size, output_type) =>
     new Promise((resolve) => {
         Resizer.imageFileResizer(
         image_file,
-        150,
-        150,
+        size,
+        size,
         // どの拡張子に圧縮するのかを指定。(下記の場合、「JPEG」に変換する。)
         "JPEG",
         100,
@@ -23,7 +23,7 @@ function ImageForm(props) {
           resolve(uri);
         },
         // どのデータタイプに変換するのかを指定。(下記の場合、「file」に変換する。)
-        "file"
+        output_type
         );
     });
 
@@ -49,31 +49,31 @@ function ImageForm(props) {
   const handleChangeFile = async (event) => {
     try {
       const image_file = event.target.files[0];
-      const resize_image_file = await resizeFile(image_file);
+      const preview_image_file = await resizeFile(image_file, 150, 'file');
       labelText.current = '写真を変更'
-      setImage(resize_image_file)
-      setPreview(window.URL.createObjectURL(resize_image_file));
+    //   斜辺サイズの枠の中央に配置する画像となり、回転させる為、300x300にリサイズして送る。
+      setImage(await resizeFile(image_file, 300, 'base64'))
+      setPreview(window.URL.createObjectURL(preview_image_file));
     } catch (err) {
       console.log(err);
     }
   };
 
+  console.log('test')
+
   const handleSubmit = () => {
       const params = {
-        file: image,
-        kind: props.radio_value_array[0],
-        inclination: props.radio_value_array[1]
+        image_base64: image,
+        image_kind: props.radio_value_array[0],
+        image_inclination: props.radio_value_array[1]
       }
 
-      axios.post(process.env.REACT_APP_SERVER_URL, params,
-      {
-        headers: {
-          'content-type': 'multipart/form-data',
-        },
-      })
+      props.get_result_check('診断中です・・・')
+      axios.post(process.env.REACT_APP_SERVER_URL, params,)
       .then(response => {
-        console.log(response);
-        props.get_result_check(response)
+        console.log(response)
+        console.log(response.data);
+        props.get_result_check(response.data)
       })
       .catch(() => {
         console.log('通信に失敗しました');
@@ -87,7 +87,7 @@ function ImageForm(props) {
       <img src={ preview } alt='' />
       <label htmlFor='image_input'>{ labelText.current }</label>
       <input
-        multiple type="file"
+        type="file"
         id='image_input'
         name="photo"
         accept="image/*"
