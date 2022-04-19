@@ -40,23 +40,19 @@ body {
   margin-bottom: 65px;
 }
 
-.button.terms_privacy {
+.terms_privacy {
+  position: absolute;
+  bottom: 0%;
+  display: flex;
+  justify-content: center;
+}
+
+.terms_privacy .button {
   font-size: 15px;
   background: gray;
   padding: 0 10px;
   height: 33px;
   line-height: 33px;
-  position: absolute;
-  bottom: 0%;
-}
-
-.button.terms {
-  right: 60%;
-  margin-right: 10px;
-}
-
-.button.privacy {
-  right: 15%;
 }
 
 .button.result {
@@ -179,9 +175,9 @@ body {
 	background: linear-gradient(180deg, rgb(244, 238, 255), rgba(255,255,255,.1)); /* 白めのグラデーション */
 }
 
-.select_item {
+/* .select_item {
   
-}
+} */
 
 .two_vertical_line {
   font-size: 22px;

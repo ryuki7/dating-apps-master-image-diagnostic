@@ -15,8 +15,10 @@ function Top() {
         <SnsShere
           title_text=''
         />
-        <Link to='/terms' className='button terms_privacy terms'>利用規約</Link>
-        <Link to='/privacy' className='button terms_privacy privacy'>プライバシーポリシー</Link>
+        <div className='terms_privacy'>
+          <Link to='/terms' className='button'>利用規約</Link>
+          <Link to='/privacy' className='button'>プライバシーポリシー</Link>
+        </div>
       </div>
     );
 };
