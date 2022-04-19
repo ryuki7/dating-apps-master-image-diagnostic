@@ -10,7 +10,7 @@ function Diagnostic() {
     // 診断結果のデータを取得()
     const [getResult, setGetResult] = useState();
     // console.log(getResult)
-    const label_text_kind_array = ['顔（マスク無し）', '顔（マスク有り or 半顔）', '雰囲気（スタイル）.※ 上半身は全部写っていること。'];
+    const label_text_kind_array = ['顔（マスク無し）', '顔（マスク有り or 半顔）', '雰囲気（スタイル）.※ 必ず上半身は全部写っていること。全身でなくても可。'];
     const label_text_inclination_array = ['無し', '左', '右'];
 
     // getResultステートを更新する。
@@ -58,6 +58,7 @@ function Diagnostic() {
               get_result_check={ (result_data) => getResultCheck(result_data) }
               radio_value_array={ radioValueArray }
             />
+            <p className='attention_text'>※ 選択した写真についての情報を正しく選択しないと、正しい診断結果を得られませんので、正しい情報を選択して下さい。<br></br>※ 写真によっては、正しい情報を選択していても、正しい診断結果を得られない時があります。ご了承ください。</p>
             <div className='select_item'>
                 <p className='two_vertical_line hot_pink'>写真の種類</p>
                 <div className="cp_ipradio hot_pink">

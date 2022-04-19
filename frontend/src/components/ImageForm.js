@@ -36,12 +36,20 @@ function ImageForm(props) {
       moveButtonElementCheck.current = false;
     }
 
+    // 最下部にスクロールを移動させる。
+    const scrollBottom = () => {
+        const element = document.documentElement;
+        const bottom = element.scrollHeight - element.clientHeight;
+        window.scroll(0, bottom);
+    }
+
     // 第二引数に「props.radio_value_array」を指定しても、なぜかレンダリング毎に実行される為、わざと第二引数を指定しない。(第二引数を指定しない時の挙動 => レンダリング毎に第１引数の関数を実行。)
     useEffect(() => {
       // 「全部(2つ)のラジオボタンが選択されている」「写真(プレビュー)が選択されている」「submitボタンが表示されていない」の3つの条件が揃っている時に動作する。
       if (!(props.radio_value_array === undefined) && !(preview === undefined) && moveButtonElementCheck.current) {
         // console.log('clear')
         moveButtonElement();
+        scrollBottom();
       }
     });
 
@@ -68,16 +76,20 @@ function ImageForm(props) {
         image_inclination: props.radio_value_array[1]
       }
 
-      props.get_result_check('診断中です・・・')
+      props.get_result_check('「診断中・・・」に切り替え')
       axios.post(process.env.REACT_APP_SERVER_URL, params,)
       .then(response => {
+        const loader_element = document.getElementById('loader');
+        const diagnostic_result_element = document.getElementById('diagnostic_result');
         console.log(response)
         console.log(response.data);
         props.get_result_check(response.data)
+        loader_element.classList.add("hidden");
+        diagnostic_result_element.classList.remove("hidden");
       })
       .catch(() => {
         console.log('通信に失敗しました');
-        props.get_result_check('テスト')
+        props.get_result_check('通信に失敗しました')
         console.log(params)
       });
   }

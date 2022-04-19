@@ -74,8 +74,8 @@ def get_cutting_image_data(image_base64, kind, inclination):
         return np.array([False])
 
     available_cutting_image_data = cv2.imread(file_name)
-    # 画像のリサイズ(顔を切り取った画像は、120x120にする。)
-    available_cutting_image_data = cv2.resize(available_cutting_image_data , (120, 120))
+    # 画像のリサイズ
+    available_cutting_image_data = cv2.resize(available_cutting_image_data , select_image_resize(kind))
     # 画像ファイルがどんどん増えていってしまう為、利用したら画像ファイルを消す。
     os.remove(file_name)
     return available_cutting_image_data
@@ -109,3 +109,12 @@ def direction_of_rotation(inclination):
     }
 
     return inclination_and_rotation_dict[inclination]
+
+def select_image_resize(kind):
+    resize_dict = {
+      '顔（マスク無し）':(120, 120),
+      '顔（マスク有り or 半顔）': (120, 120),
+      '雰囲気（スタイル）': (200, 200)
+    }
+
+    return resize_dict[kind]

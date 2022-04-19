@@ -19,11 +19,10 @@ def diagnostic_image():
     cutting_image_data = get_cutting_image_data(image_base64, params_json['image_kind'], params_json['image_inclination'])
     # 画像データが格納されている場合 => True, 画像データが格納されていない場合 => False
     if cutting_image_data.any():
-        diagnostic_result = get_diagnostic_result([cutting_image_data])
-        print('clear')
-        return str(diagnostic_result[0][1])
+        diagnostic_result_han = get_diagnostic_result([cutting_image_data], params_json['image_kind'])
+        return diagnostic_result_han + '％'
     else:
-        return '診断できませんでした'
+        return '診断できません'
 
 if __name__ == '__main__':
     # 作成したappを起動してくれる。
