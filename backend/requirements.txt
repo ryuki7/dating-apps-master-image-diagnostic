@@ -54,7 +54,7 @@ SQLAlchemy==1.4.32
 tensorboard==2.8.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
-tensorflow==1.15.3
+tensorflow==2.0.4
 tensorflow-io-gcs-filesystem==0.24.0
 termcolor==1.1.0
 tf-estimator-nightly==2.8.0.dev2021122109
