@@ -3,8 +3,34 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- ブラウザのタブ、ブックマーク等 (サイズ => 16x16 32x32 48x48) -->
+    <link rel="icon" sizes="48x48" href="/favicon.ico" />
+    <!-- iPhoneのホーム画面、Safariのお気に入り画面等 (サイズ => 180x180) -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Androidのホーム画面等 (サイズ => 192x192 512x512) -->
+    <link rel="manifest" href="/manifest.json" />
+    <!-- OGPの設定 -->
+    <meta property="og:title" content="『マッチングアプリ プロフィール写真診断』" />
+    <meta property="og:type" content="website" />
+    <!-- 本番環境を実装したら変更する -->
+    <meta property="og:url" content="https://ham-portfolio.web.app/" />
+    <!-- 本番環境を実装したら変更する(絶対パスである必要がある。) -->
+    <meta property="og:image" content="android-chrome-512x512.png" />
+    <meta property="og:image:alt" content="dating-apps-image-diagnostic" />
+    <meta property="og:site_name" content="『マッチングアプリ プロフィール写真診断』" />
+    <meta property="og:description" content="あなたの写真をマッチングアプリのプロフィール写真に設定した場合、どれくらいモテるのかを診断してくれるサービスです。" />
+    <!-- OGPの設定(twitter) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ryuki_program" />
+    <meta name="twitter:creator" content="@ryuki_program" />
+    <meta name="twitter:title" content="『マッチングアプリ プロフィール写真診断』" />
+    <meta name="twitter:description" content="あなたの写真をマッチングアプリのプロフィール写真に設定した場合、どれくらいモテるのかを診断してくれるサービスです。" />
+    <!-- 本番環境を実装したら変更する(絶対パスである必要がある。) -->
+    <meta name="twitter:image" content="android-chrome-512x512.png" />
+    <meta name="twitter:image:alt" content="dating-apps-image-diagnostic" />
     <link rel="stylesheet" href="stylesheet.css">
-    <title>マッチングアプリのプロフィール画像診断</title>
+    <title>【マッチングアプリ プロフィール写真診断】</title>
+    <meta name="description" content="あなたの写真をマッチングアプリのプロフィール写真に設定した場合、どれくらいモテるのかを診断してくれるサービスです。" />
   </head>
   <body>
     <div id="root"></div>
