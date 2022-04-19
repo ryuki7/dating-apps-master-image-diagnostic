@@ -13,6 +13,7 @@ function DiagnosticResult(props) {
             <div className="box_title">モテ度</div>
             <div className="box_element">
               <p className='result_text'>{ props.get_result_data }</p>
+              {/* レスポンスが○％を返した場合 */}
               { props.get_result_data.match(/％/) && (
                 <>
                   <p className='shere_text'>診断結果を友達にシェアする</p>
