@@ -1,5 +1,4 @@
 import pickle
-from xml.sax import SAXNotSupportedException
 # 数値計算ライブラリ
 import numpy as np
 from decimal import Decimal, ROUND_HALF_UP
