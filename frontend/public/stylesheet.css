@@ -42,7 +42,7 @@ body {
 
 .terms_privacy {
   position: absolute;
-  bottom: 0%;
+  bottom: 35px;
   display: flex;
   justify-content: center;
 }
