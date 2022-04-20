@@ -1,7 +1,12 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "マッチングアプリ プロフィール写真診断",
+  "name": "マッチングアプリ プロフィール写真診断",
   "icons": [
+    {
+      "src": "apple-touch-icon-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
     {
       "src": "android-chrome-192x192.png",
       "type": "image/png",
