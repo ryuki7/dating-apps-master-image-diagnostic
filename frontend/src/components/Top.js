@@ -4,8 +4,8 @@ import SnsShere from './SnsShere';
 
 function Top() {
     return (
-      // height => 画面上下(「URL入力ボックス」・「戻るボタン」)のことを考慮して、1.2倍にする。
-      <div className="bgImage top" style={{height: window.innerHeight * 1.2}}>
+      // height => 画面上下(「URL入力ボックス」・「戻るボタン」)のことを考慮して、1.3倍にする。
+      <div className="bgImage top" style={{height: window.innerHeight * 1.3}}>
         <div className='title'>
           <p className='sub'>マッチングアプリ</p>
           <p className='main'>プロフィール写真<br></br>診断</p>

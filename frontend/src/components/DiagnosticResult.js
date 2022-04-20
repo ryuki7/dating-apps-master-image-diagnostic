@@ -7,8 +7,8 @@ function DiagnosticResult(props) {
     return (
       <>
         <Loading />
-        {/* // height => 画面上下(「URL入力ボックス」・「戻るボタン」)のことを考慮して、1.2倍にする。 */}
-        <div className="bgImage diagnostic_result hidden" id='diagnostic_result' style={{height: window.innerHeight * 1.2}}>
+        {/* // height => 画面上下(「URL入力ボックス」・「戻るボタン」)のことを考慮して、1.3倍にする。 */}
+        <div className="bgImage diagnostic_result hidden" id='diagnostic_result' style={{height: window.innerHeight * 1.3}}>
           <p className='each_title gradation result'>診断結果</p>
           <div className='box'>
             <div className="box_title">モテ度</div>
