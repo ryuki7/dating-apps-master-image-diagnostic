@@ -9,7 +9,12 @@ app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
 CORS(app)
 
-@app.route('/', methods=["POST"])
+# 本番環境で動作しているかの確認用
+@app.route('/')
+def hello():
+    return 'Hello World!'
+
+@app.route('/diagnostic_image', methods=["POST"])
 def diagnostic_image():
     # 送られてきたparamsデータをjsonで取得する
     params_json = request.get_json()

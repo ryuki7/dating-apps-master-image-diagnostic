@@ -74,7 +74,7 @@ function ImageForm(props) {
       }
 
       props.get_result_check('「診断中・・・」に切り替え')
-      axios.post(process.env.REACT_APP_SERVER_URL, params,)
+      axios.post(process.env.REACT_APP_SERVER_URL + 'diagnostic_image', params,)
       .then(response => {
         const loader_element = document.getElementById('loader');
         const diagnostic_result_element = document.getElementById('diagnostic_result');
