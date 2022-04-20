@@ -47,7 +47,6 @@ function ImageForm(props) {
     useEffect(() => {
       // 「全部(2つ)のラジオボタンが選択されている」「写真(プレビュー)が選択されている」「submitボタンが表示されていない」の3つの条件が揃っている時に動作する。
       if (!(props.radio_value_array === undefined) && !(preview === undefined) && moveButtonElementCheck.current) {
-        // console.log('clear')
         moveButtonElement();
         scrollBottom();
       }
@@ -67,8 +66,6 @@ function ImageForm(props) {
     }
   };
 
-  console.log('test')
-
   const handleSubmit = () => {
       const params = {
         image_base64: image,
@@ -81,8 +78,6 @@ function ImageForm(props) {
       .then(response => {
         const loader_element = document.getElementById('loader');
         const diagnostic_result_element = document.getElementById('diagnostic_result');
-        console.log(response)
-        console.log(response.data);
         props.get_result_check(response.data)
         loader_element.classList.add("hidden");
         diagnostic_result_element.classList.remove("hidden");

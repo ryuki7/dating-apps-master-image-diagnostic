@@ -45,7 +45,6 @@ function Diagnostic() {
     //   二つのラジオのボタンが選択されていれば、Stateを更新して、再レンダリングさせる。(ImageFormコンポーネントに新しいpropsを渡したい。)
       if (!(radioValueKind.current === undefined) && !(radioValueInclination.current === undefined)) {
         setRadioValueArray([radioValueKind.current, radioValueInclination.current])
-        // console.log('OK')
       }
     }
 
