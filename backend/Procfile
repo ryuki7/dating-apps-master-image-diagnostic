@@ -1,1 +1,1 @@
-web: gunicorn -b 0.0.0.0:$PORT --pythonpath src src.main:app --log-file=-
+web: python src/main.py
