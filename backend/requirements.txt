@@ -27,7 +27,6 @@ MarkupSafe==2.1.1
 numpy==1.21.6
 oauthlib==3.2.0
 opencv-contrib-python==4.5.5.64
-opencv-python==4.5.5.64
 opencv-python-headless==4.5.5.64
 opt-einsum==3.3.0
 protobuf==3.20.0
@@ -50,3 +49,4 @@ urllib3==1.26.9
 Werkzeug==2.1.1
 wrapt==1.12.1
 zipp==3.8.0
+libgl1-mesa-dev
