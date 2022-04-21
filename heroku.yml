@@ -3,3 +3,5 @@ build:
     - python
   packages:
     - libopencv-dev
+  run:
+    web: python backend/src/main.py
