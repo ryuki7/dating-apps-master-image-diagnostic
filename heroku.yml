@@ -3,5 +3,5 @@ build:
     - python
   packages:
     - libopencv-dev
-  run:
-    web: gunicorn backend.src.main:app --log-file -
+run:
+  web: gunicorn backend.src.main:app --log-file -
