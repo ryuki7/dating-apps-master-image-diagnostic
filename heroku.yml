@@ -1,0 +1,5 @@
+build:
+  languages:
+    - python
+  packages:
+    - libopencv-dev
