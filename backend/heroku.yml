@@ -4,4 +4,4 @@ build:
   packages:
     - libopencv-dev
   run:
-    web: python backend/src/main.py
+    web: python src/main.py
