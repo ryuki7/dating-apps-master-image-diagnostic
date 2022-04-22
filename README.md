@@ -3,7 +3,7 @@
 <br>
 <img width="1439" alt="マッチングアプリ プロフィール写真診断 トップページ" src="https://user-images.githubusercontent.com/72130011/164699578-cb936a88-1fd3-4d48-8bea-aef908df22ba.png">
 
-# アプリURL
+# アプリURL(対応端末: `PC`・`スマホ`どちらも対応)
 http://www.profile-diagnostic.com (ドメインが反映され、SSLの設定が終わり次第、修正する)<br>
 <br>
 🌷 PV数 ○PV (2022年○月○日現在)<br>
