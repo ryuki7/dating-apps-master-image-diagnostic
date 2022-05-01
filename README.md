@@ -4,11 +4,11 @@
 <img width="1439" alt="マッチングアプリ プロフィール写真診断 トップページ" src="https://user-images.githubusercontent.com/72130011/164699578-cb936a88-1fd3-4d48-8bea-aef908df22ba.png">
 
 # アプリURL(対応端末: `PC`・`スマホ`どちらも対応)
-https://www.profile-diagnostic.com/<br>
+https://profile-diagnostic.com/<br>
+<!-- <br>
+🌷 PV数 ○PV (2022年○月○日現在)<br> -->
 <br>
-🌷 PV数 ○PV (2022年○月○日現在)<br>
-<br>
-🌷 ユーザー数 ○人 (2022年○月○日現在)
+🌷 UU数 150人 (2022年5月2日現在)
 
 # サービス概要
 マッチングアプリを利用している・利用しようか迷っているが女子受けの良いプロフィール写真が分からない、マッチングアプリを利用したら自分がどれくらいモテるのかを知りたい人に<br>
